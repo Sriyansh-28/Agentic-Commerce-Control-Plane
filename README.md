@@ -2,6 +2,8 @@
 
 > **AI proposes. Deterministic systems control money.**
 
+🚀 **Live Demo:** https://agentguard-ochre.vercel.app
+
 AgentGuard is a runtime control plane for agentic commerce that enforces **bounded delegated authority** before an AI-selected purchase can execute.
 
 The core idea is simple:
