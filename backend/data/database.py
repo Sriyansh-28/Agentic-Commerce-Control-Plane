@@ -1,12 +1,14 @@
+import os
 import sqlite3
 from pathlib import Path
 
 
-PROJECT_ROOT = Path(
-    r"E:\Resumes\Razorpay\agentic-commerce-control-plane"
-)
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-DATABASE_PATH = PROJECT_ROOT / "backend" / "data" / "agentguard.db"
+if os.getenv("VERCEL"):
+    DATABASE_PATH = Path("/tmp/agentguard.db")
+else:
+    DATABASE_PATH = PROJECT_ROOT / "backend" / "data" / "agentguard.db"
 
 
 def get_connection() -> sqlite3.Connection:

@@ -6,9 +6,7 @@ from dotenv import load_dotenv
 from backend.guardrails.schemas import UserIntent
 
 
-load_dotenv(
-    r"E:\Resumes\Razorpay\agentic-commerce-control-plane\.env"
-)
+load_dotenv()
 
 
 def parse_user_intent(request: str) -> UserIntent:
@@ -110,15 +108,15 @@ def _extract_max_amount(request: str) -> int:
     Extract the maximum allowed purchase amount.
 
     Supports common deterministic forms such as:
-        under ₹4,000
-        below ₹4000
-        max ₹4,000
+        under ?4,000
+        below ?4000
+        max ?4,000
         maximum 4000
     """
 
     patterns = [
-        r"(?:under|below|max(?:imum)?|up\s*to)\s*₹?\s*([\d,]+)",
-        r"₹\s*([\d,]+)\s*(?:or\s*less|maximum)",
+    r"(?:under|below|max(?:imum)?|up\s*to)\s*(?:₹\s*)?([\d,]+)",
+    r"₹\s*([\d,]+)\s*(?:or\s*less|maximum)",
     ]
 
     for pattern in patterns:
