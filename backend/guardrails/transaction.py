@@ -1,0 +1,15 @@
+from enum import Enum
+
+
+class TransactionState(str, Enum):
+    PROPOSED = "PROPOSED"
+    VALIDATING = "VALIDATING"
+    AUTHORIZED = "AUTHORIZED"
+    EXECUTING = "EXECUTING"
+    CAPTURED = "CAPTURED"
+
+    BLOCKED = "BLOCKED"
+    FAILED = "FAILED"
+    EXPIRED = "EXPIRED"
+    REQUIRES_REAUTH = "REQUIRES_REAUTH"
+    DUPLICATE = "DUPLICATE"

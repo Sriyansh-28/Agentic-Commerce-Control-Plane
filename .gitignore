@@ -1,0 +1,8 @@
+.env
+frontend/.env
+__pycache__/
+*.pyc
+.venv/
+
+# Local SQLite database
+*.db
